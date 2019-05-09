@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../static/css/styly.css" th:href="'css/styly.css'"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=latin-ext" rel="stylesheet">
+    <title>Panenky</title>
+</head>
+<body>
+
+    <h1><a href="index.html">Panenky</a></h1>
+
+    <ul class="navigace">
+        <a href="seznam.html" th:href="'seznam.html'"><li>Ukázat existující panenky</li></a>
+        <a href="nova.html" th:href="'nova.html'"><li>Vytvořit novou panenku</li></a>
+        <a href="hledat.html" th:href="'hledat.html'"><li>Vyhledat panenky</li></a>
+    </ul>
+
+    <table>
+        <tr>
+            <td>Jméno</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>vršek</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>spodek</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>datum vzniku</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td rowspan="2"> <input type="submit" value="vyhledat"></td>
+        </tr>
+
+    </table>
+
+    <p>(Po odeslání požadavku vyhledá do listu všechny panenky, které vyhovují kritériím a zobrazí je na template/seznam.)</p>
+
+</body>
+</html>
