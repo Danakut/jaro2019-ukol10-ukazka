@@ -10,64 +10,73 @@
 </head>
 <body>
 
-    <h1><a href="index.html">Panenky</a></h1>
+    <header>
+        <h1><a href="index.html">Panenky</a></h1>
 
-    <ul class="navigace">
-        <a href="seznam.html" th:href="'seznam.html'"><li>Ukázat existující panenky</li></a>
-        <a href="nova.html" th:href="'nova.html'"><li>Vytvořit novou panenku</li></a>
-        <a href="hledat.html" th:href="'hledat.html'"><li>Vyhledat panenky</li></a>
-    </ul>
+        <ul class="navigace">
+            <a href="seznam.html" th:href="'seznam.html'"><li>Ukázat existující panenky</li></a>
+            <a href="nova.html" th:href="'nova.html'"><li>Vytvořit novou panenku</li></a>
+            <a href="hledat.html" th:href="'hledat.html'"><li>Vyhledat panenky</li></a>
+        </ul>
+    </header>
 
-    <form>
-        <h2>Vrchní díl: </h2>
-        <div class="obleceni">
-            <div class="tricko" th:each="polozka: ${seznamVrsku}">
-                <img src="../static/images/javagirl_top01.png" th:src="'images/' + ${polozka}">
-                <input type="radio" name="vrsek" value="javarigl_top01.png" th:value="${polozka}"></input>
-            </div>
-            <div class="tricko" th:remove="all">
-                <img src="../static/images/javagirl_top02.png" th:src="'images/' + ${polozka}">
-                <input type="radio" name="vrsek" value="javarigl_top01.png" th:value="${polozka}"></input>
-            </div>
-            <div class="tricko" th:remove="all">
-                <img src="../static/images/javagirl_top03.png" th:src="'images/' + ${polozka}">
-                <input type="radio" name="vrsek" value="javarigl_top01.png" th:value="${polozka}"></input>
-            </div>
-            <div class="tricko" th:remove="all">
-                <img src="../static/images/javagirl_top04.png" th:src="'images/' + ${polozka}">
-                <input type="radio" name="vrsek" value="javarigl_top01.png" th:value="${polozka}"></input>
-            </div>
-            <div class="tricko" th:remove="all">
-                <img src="../static/images/javagirl_top05.png" th:src="'images/' + ${polozka}">
-                <input type="radio" name="vrsek" value="javarigl_top01.png" th:value="${polozka}"></input>
-            </div>
-        </div>
+    <main>
+        <h2>Nová panenka</h2>
 
-        <h2>Spodní díl:</h2>
-        <div class="obleceni">
-            <div class="kalhoty" th:each="polozka: ${seznamSpodku}">
-                <img src="../static/images/javagirl_bottom01.png" th:src="'images/' + ${polozka}">
-                <input type="radio" name="vrsek" value="javarigl_bottom01.png" th:value="${polozka}"></input>
+        <form>
+            <label for="jmeno">Jméno</label>
+            <input id="jmeno" type="text" name="jmeno">
+            <h3>Vrchní díl: </h3>
+            <div class="obleceni">
+                <div class="tricko" th:each="polozka: ${seznamVrsku}">
+                    <img src="../static/images/javagirl_top01.png" th:src="'images/' + ${polozka}">
+                    <input type="radio" name="vrsek" value="javarigl_top01.png" th:value="${polozka}"></input>
+                </div>
+                <div class="tricko" th:remove="all">
+                    <img src="../static/images/javagirl_top02.png" th:src="'images/' + ${polozka}">
+                    <input type="radio" name="vrsek" value="javarigl_top01.png" th:value="${polozka}"></input>
+                </div>
+                <div class="tricko" th:remove="all">
+                    <img src="../static/images/javagirl_top03.png" th:src="'images/' + ${polozka}">
+                    <input type="radio" name="vrsek" value="javarigl_top01.png" th:value="${polozka}"></input>
+                </div>
+                <div class="tricko" th:remove="all">
+                    <img src="../static/images/javagirl_top04.png" th:src="'images/' + ${polozka}">
+                    <input type="radio" name="vrsek" value="javarigl_top01.png" th:value="${polozka}"></input>
+                </div>
+                <div class="tricko" th:remove="all">
+                    <img src="../static/images/javagirl_top05.png" th:src="'images/' + ${polozka}">
+                    <input type="radio" name="vrsek" value="javarigl_top01.png" th:value="${polozka}"></input>
+                </div>
             </div>
-            <div class="kalhoty" th:remove="all">
-                <img src="../static/images/javagirl_bottom02.png" th:src="'images/' + ${polozka}">
-                <input type="radio" name="vrsek" value="javarigl_bottom01.png" th:value="${polozka}"></input>
+
+            <h3>Spodní díl:</h3>
+            <div class="obleceni">
+                <div class="kalhoty" th:each="polozka: ${seznamSpodku}">
+                    <img src="../static/images/javagirl_bottom01.png" th:src="'images/' + ${polozka}">
+                    <input type="radio" name="vrsek" value="javarigl_bottom01.png" th:value="${polozka}"></input>
+                </div>
+                <div class="kalhoty" th:remove="all">
+                    <img src="../static/images/javagirl_bottom02.png" th:src="'images/' + ${polozka}">
+                    <input type="radio" name="vrsek" value="javarigl_bottom01.png" th:value="${polozka}"></input>
+                </div>
+                <div class="kalhoty" th:remove="all">
+                    <img src="../static/images/javagirl_bottom03.png" th:src="'images/' + ${polozka}">
+                    <input type="radio" name="vrsek" value="javarigl_bottom01.png" th:value="${polozka}"></input>
+                </div>
+                <div class="kalhoty" th:remove="all">
+                    <img src="../static/images/javagirl_bottom04.png" th:src="'images/' + ${polozka}">
+                    <input type="radio" name="vrsek" value="javarigl_bottom01.png" th:value="${polozka}"></input>
+                </div>
+                <div class="kalhoty" th:remove="all">
+                    <img src="../static/images/javagirl_bottom05.png" th:src="'images/' + ${polozka}">
+                    <input type="radio" name="vrsek" value="javarigl_bottom01.png" th:value="${polozka}"></input>
+                </div>
             </div>
-            <div class="kalhoty" th:remove="all">
-                <img src="../static/images/javagirl_bottom03.png" th:src="'images/' + ${polozka}">
-                <input type="radio" name="vrsek" value="javarigl_bottom01.png" th:value="${polozka}"></input>
-            </div>
-            <div class="kalhoty" th:remove="all">
-                <img src="../static/images/javagirl_bottom04.png" th:src="'images/' + ${polozka}">
-                <input type="radio" name="vrsek" value="javarigl_bottom01.png" th:value="${polozka}"></input>
-            </div>
-            <div class="kalhoty" th:remove="all">
-                <img src="../static/images/javagirl_bottom05.png" th:src="'images/' + ${polozka}">
-                <input type="radio" name="vrsek" value="javarigl_bottom01.png" th:value="${polozka}"></input>
-            </div>
-        </div>
-        <input id="obleceni_odeslat" type="submit" value="Uložit"/>
-    </form>
+            <input id="obleceni_odeslat" type="submit" value="Uložit"/>
+        </form>
+
+    </main>
     
 </body>
 </html>
