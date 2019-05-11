@@ -3,13 +3,30 @@
 }
 
 body {
+    margin: 0;
     color: hsl(251, 32%, 34%);
     font-family: 'Montserrat', sans-serif;
 }
 
+header {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    width: 100%;
+    min-width: 250px;
+    margin: 0;
+}
+
 h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    margin: 0;
+    min-width: 250px;
     color: #ad6bff;
-    text-align: center;
+    background: rgba(173, 107, 255, 0.2);
+    font-size: 3rem;
 }
 
 h1 > a {
@@ -18,11 +35,17 @@ h1 > a {
 }
 
 .navigace {
-    background: rgba(173, 107, 255, 0.8);
+    display: inline-block;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 1rem;
+    min-width: 250px;
+    background: rgba(173, 107, 255, 1);
+    overflow: visible;
 }
 
 .navigace li {
-    display: inline-block;
+    display: block;
     padding: 0.5rem 1rem;
     color: white;
     font-weight: bold;
@@ -32,35 +55,43 @@ h1 > a {
     background: rgba(0, 0, 0, 0.5);
 }
 
+.navigace a {
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+}
+
+h2 {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    color: hsl(245, 30%, 56%);
+    font-size: 2rem;
+}
+
 .seznam {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.obrazek {
-    position: relative;
-    /*tento parametr meni velikost obrazku a tim i cele polozky*/
-    height: 400px;
+.polozka {
+    padding: 0.5rem;
+    padding-bottom: calc(0.5rem + 10px);
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: rgba(69, 59, 114, 0.5) 3px 3px 20px;
 }
 
-.obrazek img {
-    height: 100%;
-    margin-top: 1rem;
-}
-
-.obrazek .cover {
-    position: absolute;
-    top:0;
-    right:0;
-}
-
-.polozka h3,p {
+.polozka h3, .polozka p {
     margin: 0;
 }
 
 .polozka a {
     display: block;
+    position: relative;
+    top: 10px;
     padding: 0.5rem;
     margin: 0.5rem;
     text-align: center;
@@ -75,6 +106,23 @@ h1 > a {
     color: white;
     background: rgba(115, 84, 176, 0.8);
     border: 3px solid #8a52ca;
+}
+
+.obrazek {
+    position: relative;
+    /*tento parametr meni velikost obrazku a tim i cele polozky*/
+    height: 400px;
+}
+
+.obrazek img {
+    height: 100%;
+    margin: 1rem;
+}
+
+.cover {
+    position: absolute;
+    top:0;
+    right:0;
 }
 
 /*-----------------------------------new---------------*/
@@ -135,3 +183,57 @@ h1 > a {
     border: 3px solid #8a52ca;
 }
 
+@media (max-width: 710px) {
+
+    .obrazek {
+        height: 250px;
+    }
+
+}
+
+@media (max-width: 580px) {
+
+    .polozka h3, .polozka p, .polozka a {
+        font-size: 0.8rem;
+    }
+
+    .polozka a {
+        padding: 0.2rem;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        background: rgba(173, 107, 255, 0.8);
+        border: 2px solid #ad6bff;
+        border-radius: 5px;
+    }
+
+}
+
+@media (max-width: 530px) {
+
+    h1 {
+        padding: 1rem 0;
+    }
+
+    .navigace {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    main {
+        padding: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .seznam {
+        justify-content: center;
+    }
+
+}

@@ -10,73 +10,79 @@
 </head>
 <body>
 
-    <h1><a href="index.html">Panenky</a></h1>
+    <header>
+        <h1><a href="index.html">Panenky</a></h1>
 
-    <ul class="navigace">
-        <a href="seznam.html" th:href="'seznam.html'"><li>Ukázat existující panenky</li></a>
-        <a href="nova.html" th:href="'nova.html'"><li>Vytvořit novou panenku</li></a>
-        <a href="hledat.html" th:href="'hledat.html'"><li>Vyhledat panenky</li></a>
-    </ul>
+        <ul class="navigace">
+            <a href="seznam.html" th:href="'seznam.html'"><li>Ukázat existující panenky</li></a>
+            <a href="nova.html" th:href="'nova.html'"><li>Vytvořit novou panenku</li></a>
+            <a href="hledat.html" th:href="'hledat.html'"><li>Vyhledat panenky</li></a>
+        </ul>
+    </header>
+
+    <main>
 
     <h2>Seznam existujících panenek</h2>
 
-    <div class="seznam">
-        <div class="polozka">
-            <h3>Jméno</h3>
-            <p>datum vzniku</p>
-            <div class="obrazek">
-                <img src="../static/images/javagirl_background.png" th:src="'images/javagirl_background.png'">
-                <img class="cover" src="../static/images/javagirl_top01.png" th:src="'images/javagirl_top01.png'">
-                <img class="cover" src="../static/images/javagirl_bottom01.png" th:src="'images/javagirl_bottom01.png'">
+        <div class="seznam">
+            <div class="polozka">
+                <h3>Jméno</h3>
+                <p>datum vzniku</p>
+                <div class="obrazek">
+                    <img src="../static/images/javagirl_background.png" th:src="'images/javagirl_background.png'">
+                    <img class="cover" src="../static/images/javagirl_top01.png" th:src="'images/javagirl_top01.png'">
+                    <img class="cover" src="../static/images/javagirl_bottom01.png" th:src="'images/javagirl_bottom01.png'">
+                </div>
+                <a href>detail</a>
+                <a href>smazat</a>
             </div>
-            <a href>detail</a>
-            <a href>smazat</a>
-        </div>
-        <div class="polozka">
-            <h3>Jméno</h3>
-            <p>datum vzniku</p>
-            <div class="obrazek">
-                <img src="../static/images/javagirl_background.png" th:src="'images/javagirl_background.png'">
-                <img class="cover" src="../static/images/javagirl_top02.png" th:src="'images/javagirl_top02.png'">
-                <img class="cover" src="../static/images/javagirl_bottom02.png" th:src="'images/javagirl_bottom02.png'">
+            <div class="polozka">
+                <h3>Jméno</h3>
+                <p>datum vzniku</p>
+                <div class="obrazek">
+                    <img src="../static/images/javagirl_background.png" th:src="'images/javagirl_background.png'">
+                    <img class="cover" src="../static/images/javagirl_top02.png" th:src="'images/javagirl_top02.png'">
+                    <img class="cover" src="../static/images/javagirl_bottom02.png" th:src="'images/javagirl_bottom02.png'">
+                </div>
+                <a href>detail</a>
+                <a href>smazat</a>
             </div>
-            <a href>detail</a>
-            <a href>smazat</a>
-        </div>
-        <div class="polozka">
-            <h3>Jméno</h3>
-            <p>datum vzniku</p>
-            <div class="obrazek">
-                <img src="../static/images/javagirl_background.png" th:src="'images/javagirl_background.png'">
-                <img class="cover" src="../static/images/javagirl_top03.png" th:src="'images/javagirl_top03.png'">
-                <img class="cover" src="../static/images/javagirl_bottom03.png" th:src="'images/javagirl_bottom03.png'">
+            <div class="polozka">
+                <h3>Jméno</h3>
+                <p>datum vzniku</p>
+                <div class="obrazek">
+                    <img src="../static/images/javagirl_background.png" th:src="'images/javagirl_background.png'">
+                    <img class="cover" src="../static/images/javagirl_top03.png" th:src="'images/javagirl_top03.png'">
+                    <img class="cover" src="../static/images/javagirl_bottom03.png" th:src="'images/javagirl_bottom03.png'">
+                </div>
+                <a href>detail</a>
+                <a href>smazat</a>
             </div>
-            <a href>detail</a>
-            <a href>smazat</a>
-        </div>
-        <div class="polozka">
-            <h3>Jméno</h3>
-            <p>datum vzniku</p>
-            <div class="obrazek">
-                <img src="../static/images/javagirl_background.png" th:src="'images/javagirl_background.png'">
-                <img class="cover" src="../static/images/javagirl_top04.png" th:src="'images/javagirl_top04.png'">
-                <img class="cover" src="../static/images/javagirl_bottom04.png" th:src="'images/javagirl_bottom04.png'">
+            <div class="polozka">
+                <h3>Jméno</h3>
+                <p>datum vzniku</p>
+                <div class="obrazek">
+                    <img src="../static/images/javagirl_background.png" th:src="'images/javagirl_background.png'">
+                    <img class="cover" src="../static/images/javagirl_top04.png" th:src="'images/javagirl_top04.png'">
+                    <img class="cover" src="../static/images/javagirl_bottom04.png" th:src="'images/javagirl_bottom04.png'">
+                </div>
+                <a href>detail</a>
+                <a href>smazat</a>
             </div>
-            <a href>detail</a>
-            <a href>smazat</a>
-        </div>
-        <div class="polozka">
-            <h3>Jméno</h3>
-            <p>datum vzniku</p>
-            <div class="obrazek">
-                <img src="../static/images/javagirl_background.png" th:src="'images/javagirl_background.png'">
-                <img class="cover" src="../static/images/javagirl_top05.png" th:src="'images/javagirl_top05.png'">
-                <img class="cover" src="../static/images/javagirl_bottom05.png" th:src="'images/javagirl_bottom05.png'">
+            <div class="polozka">
+                <h3>Jméno</h3>
+                <p>datum vzniku</p>
+                <div class="obrazek">
+                    <img src="../static/images/javagirl_background.png" th:src="'images/javagirl_background.png'">
+                    <img class="cover" src="../static/images/javagirl_top05.png" th:src="'images/javagirl_top05.png'">
+                    <img class="cover" src="../static/images/javagirl_bottom05.png" th:src="'images/javagirl_bottom05.png'">
+                </div>
+                <a href>detail</a>
+                <a href>smazat</a>
             </div>
-            <a href>detail</a>
-            <a href>smazat</a>
         </div>
-    </div>
+
+    </main>
 
 </body>
 </html>
