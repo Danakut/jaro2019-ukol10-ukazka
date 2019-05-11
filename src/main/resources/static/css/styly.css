@@ -136,6 +136,7 @@ h2 {
     position: relative;
     margin: 1rem;
     border: 3px solid #8a52ca;
+    border-radius: 5px;
 }
 
 .obleceni input {
@@ -187,7 +188,7 @@ h2 {
 
 .detail {
     display: flex;
-    justify-content: center ;
+    justify-content: center;
 }
 
 .detail div {
@@ -198,6 +199,11 @@ h2 {
     display: flex;
     flex-direction: column;
 }
+
+.detail_input select, .detail_input input {
+    margin-bottom: 2rem;
+}
+
 
 
 
@@ -225,6 +231,18 @@ h2 {
         background: rgba(173, 107, 255, 0.8);
         border: 2px solid #ad6bff;
         border-radius: 5px;
+    }
+
+    .detail {
+        flex-wrap: wrap;
+    }
+
+    .detail_input label:first-child {
+        margin-top: 1rem;
+    }
+
+    .detail_input select, .detail_input input {
+        margin-bottom: 1rem;
     }
 
 }
