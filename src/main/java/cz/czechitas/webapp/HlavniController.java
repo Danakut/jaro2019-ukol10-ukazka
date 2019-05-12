@@ -2,6 +2,7 @@ package cz.czechitas.webapp;
 
 import java.io.IOException;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -25,29 +26,67 @@ public class HlavniController {
 
     }
 
-    private PanenkaRepository panenkaRepository = new PanenkaRepository();
+    private JdbcPanenkaRepository panenkaRepository = new JdbcPanenkaRepository();
 
     @RequestMapping("/")
-    public ModelAndView zobrazIndex() throws SQLException {
+    public ModelAndView zobrazIndex(){
         return new ModelAndView("index");
     }
 
     @RequestMapping("/seznam.html")
-    public ModelAndView zobrazSeznam() throws SQLException {
-        return new ModelAndView("seznam");
+    public ModelAndView zobrazSeznam(){
+        ModelAndView drzak = new ModelAndView("seznam");
+        drzak.addObject("seznamPanenek", panenkaRepository.findAll());
+        return drzak;
     }
 
     @RequestMapping("/hledat.html")
-    public ModelAndView zobrazHledani() throws SQLException {
+    public ModelAndView zobrazHledani(){
         return new ModelAndView("hledat");
     }
 
-    @RequestMapping("/nova.html")
-    public ModelAndView zobrazNova() throws SQLException {
-        ModelAndView moavi = new ModelAndView("nova");
-        moavi.addObject("seznamVrsku", topPaths);
-        moavi.addObject("seznamSpodku", bottomPaths);
-        return moavi;
+    @RequestMapping(value = "/detail-{id:[0-9]+}.html", method = RequestMethod.GET)
+    public ModelAndView zobrazDetail(@PathVariable Long id) {
+        ModelAndView drzak = new ModelAndView("detail");
+        Panenka nalezenaPanenka = panenkaRepository.findById(id);
+        drzak.addObject("panenka", nalezenaPanenka);
+        drzak.addObject("seznamVrsku", topPaths);
+        drzak.addObject("seznamSpodku", bottomPaths);
+        return drzak;
+    }
+
+    @RequestMapping(value = "/detail-{id:[0-9]+}.html", method = RequestMethod.POST)
+    public ModelAndView zpracujDetail(@PathVariable Long id, PanenkaForm formular) {
+        Panenka nalezenaPanenka = panenkaRepository.findById(id);
+        if (nalezenaPanenka != null) {
+            nalezenaPanenka.setJmeno(formular.getJmeno());
+            nalezenaPanenka.setVrsek(formular.getVrsek());
+            nalezenaPanenka.setSpodek(formular.getSpodek());
+            panenkaRepository.save(nalezenaPanenka);
+        }
+        return new ModelAndView("redirect:/seznam.html");
+    }
+
+    @RequestMapping(value = "/nova.html", method = RequestMethod.GET)
+    public ModelAndView zobrazNova(){
+        ModelAndView drzak = new ModelAndView("nova");
+        drzak.addObject("seznamVrsku", topPaths);
+        drzak.addObject("seznamSpodku", bottomPaths);
+        return drzak;
+    }
+
+    @RequestMapping(value = "/nova.html", method = RequestMethod.POST)
+    public ModelAndView zpracujNova(PanenkaForm formular) {
+        String datum = LocalDate.now().toString();
+        Panenka panenka = new Panenka(formular.getJmeno(), formular.getVrsek(), formular.getSpodek(), datum);
+        panenkaRepository.save(panenka);
+        return new ModelAndView("redirect:/seznam.html");
+    }
+
+    @RequestMapping(value = "/smazat-{id:[0-9]+}.html")
+    public ModelAndView zpracujSmazani(@PathVariable Long id) {
+        panenkaRepository.delete(id);
+        return new ModelAndView("redirect:/seznam.html");
     }
 
 
@@ -62,7 +101,7 @@ public class HlavniController {
         } else if (type.equals("bottom")) {
             vzorNazvu = Pattern.compile("javagirl_bottom\\d+.png");
         } else {
-            //throw Exception?
+            //throw Exception
         }
 
         List<String> paths = new ArrayList<>(soubory.size());

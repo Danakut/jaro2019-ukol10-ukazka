@@ -7,7 +7,18 @@ public class Panenka {
     private String vrsek;
     private String spodek;
     private String datumVzniku;
+    private int verze;
 
+    public Panenka() {
+
+    }
+
+    public Panenka(String jmeno, String vrsek, String spodek, String datumVzniku) {
+        this.jmeno = jmeno;
+        this.vrsek = vrsek;
+        this.spodek = spodek;
+        this.datumVzniku = datumVzniku;
+    }
 
     public Long getId() {
         return id;
@@ -47,5 +58,13 @@ public class Panenka {
 
     public void setDatumVzniku(String datumVzniku) {
         this.datumVzniku = datumVzniku;
+    }
+
+    public int getVerze() {
+        return verze;
+    }
+
+    public void setVerze(int verze) {
+        this.verze = verze;
     }
 }

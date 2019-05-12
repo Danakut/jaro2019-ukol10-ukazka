@@ -73,13 +73,14 @@ h2 {
 .seznam {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-content: flex-start;
 }
 
 .polozka {
     padding: 0.5rem;
     padding-bottom: calc(0.5rem + 10px);
-    margin-bottom: 1rem;
+    margin: 0.5rem;
     border-radius: 5px;
     box-shadow: rgba(69, 59, 114, 0.5) 3px 3px 20px;
 }
@@ -97,6 +98,7 @@ h2 {
     text-align: center;
     text-decoration: none;
     font-weight: bold;
+    color: inherit;
     background: rgba(173, 107, 255, 0.8);
     border: 3px solid #ad6bff;
     border-radius: 5px;
