@@ -15,7 +15,7 @@ CREATE TABLE panenky
 );
 
 CREATE USER  'student'   IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON panenky.* TO 'student'@'%';
+GRANT ALL PRIVILEGES ON skladPanenek.* TO 'student'@'%';
 
 INSERT INTO panenky (jmeno, vrsek, spodek, datumVzniku) VALUES ("Amélie", "javagirl_top01.png", "javagirl_bottom01.png", "2019-05-06");
 INSERT INTO panenky (jmeno, vrsek, spodek, datumVzniku) VALUES ("Bronislava", "javagirl_top02.png", "javagirl_bottom02.png", "2019-05-07");
