@@ -18,7 +18,7 @@ public class JdbcPanenkaRepository {
             MariaDbDataSource konfiguraceDatabaze = new MariaDbDataSource();
             konfiguraceDatabaze.setUserName("student");
             konfiguraceDatabaze.setPassword("password");
-            konfiguraceDatabaze.setUrl("jdbc:mariadb://localhost:3306/skladPanenek");
+            konfiguraceDatabaze.setUrl("jdbc:mariadb://localhost:3306/herokuSkladPanenek");
 
             odesilacDotazu = new JdbcTemplate(konfiguraceDatabaze);
             prevodnik = BeanPropertyRowMapper.newInstance(Panenka.class);
